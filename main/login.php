@@ -1,4 +1,5 @@
 <?php
+// PAGE IS IN NEED OF FORMATTING
 require_once 'includes/db.php';
 session_start();
 
@@ -85,4 +86,5 @@ if (isset($_POST['submit'])) {
 <p><a href="index.php">Back to overview</a></p>
 
 </body>
+
 </html>
