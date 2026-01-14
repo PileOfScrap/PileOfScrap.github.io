@@ -1,6 +1,6 @@
 <?php
-session_start();
-require 'database.php';
+require_once 'includes/database.php';
+require_once 'includes/auth.php';
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -162,4 +162,5 @@ $all_products = $t_all->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 </body>
+
 </html>
