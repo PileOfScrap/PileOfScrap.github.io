@@ -1,11 +1,6 @@
 <?php
-session_start();
-require 'database.php';
-
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
+require_once 'database.php';
+require_once 'includes/auth.php'
 
 if (isset($_GET['id'])) {
     $reservation_id = $_GET['id'];
@@ -32,4 +27,5 @@ if (isset($_GET['id'])) {
 } else {
     header("Location: profile.php");
 }
+
 ?>
