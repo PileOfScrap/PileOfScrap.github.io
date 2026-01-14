@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require 'database.php';
+require_once 'includes/database.php';
 
 $error = "";
 
@@ -80,4 +80,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 </body>
+
 </html>
