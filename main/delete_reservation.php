@@ -1,6 +1,6 @@
 <?php
 require_once 'database.php';
-require_once 'includes/auth.php'
+require_once 'includes/auth.php';
 
 if (isset($_GET['id'])) {
     $reservation_id = $_GET['id'];
@@ -29,3 +29,4 @@ if (isset($_GET['id'])) {
 }
 
 ?>
+
