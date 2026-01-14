@@ -45,14 +45,8 @@
             - Actie = edit_profile.php (Postback)
 */
 
-session_start();
-
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
-
-require 'database.php';
+require_once 'database.php';
+require_once 'includes/auth.php';
 $user_id = $_SESSION['user_id'];
 $errors = [];
 $success_msg = "";
@@ -174,4 +168,5 @@ $user = $t->fetch(PDO::FETCH_ASSOC);
 </div>
 
 </body>
+
 </html>
