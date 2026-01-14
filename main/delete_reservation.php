@@ -1,5 +1,5 @@
 <?php
-require_once 'database.php';
+require_once 'includes/database.php';
 require_once 'includes/auth.php';
 
 if (isset($_GET['id'])) {
@@ -29,4 +29,5 @@ if (isset($_GET['id'])) {
 }
 
 ?>
+
 
