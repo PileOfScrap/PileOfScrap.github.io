@@ -1,12 +1,7 @@
 <?php
-session_start();
+require 'includes/database.php';
+require_once 'includes/auth.php';
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
-
-require 'database.php';
 $user_id = $_SESSION['user_id'];
 
 $t_user = $conn->prepare("SELECT * FROM customers WHERE id = ?");
@@ -149,4 +144,5 @@ $reservations = $t_res->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 </body>
+
 </html>
