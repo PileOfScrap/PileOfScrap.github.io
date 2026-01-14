@@ -1,5 +1,5 @@
 <?php
-require_once 'database.php';
+require_once 'includes/database.php';
 require_once 'includes/auth.php';
 
 $errors = [];
@@ -120,4 +120,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+
 
