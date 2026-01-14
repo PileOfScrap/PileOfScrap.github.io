@@ -45,7 +45,7 @@
             - Actie = edit_profile.php (Postback)
 */
 
-require_once 'database.php';
+require_once 'includes/database.php';
 require_once 'includes/auth.php';
 $user_id = $_SESSION['user_id'];
 $errors = [];
@@ -170,3 +170,4 @@ $user = $t->fetch(PDO::FETCH_ASSOC);
 </body>
 
 </html>
+
