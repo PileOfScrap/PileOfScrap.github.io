@@ -1,49 +1,4 @@
 <?php
-/*
-    ------ Stap 1: authenticatie
-    Start de sessie
-    IF gebruiker NIET is ingelogd:
-        Terug sturen naar login.php
-        STOP script
-    Create verbinding met database
-    variabelen (errors array, user_id) initialiseren
-
-    ------Stap 2: verwerken van invoer (POST/POSTBACK)
-    IF de aanvraag-methode POST is:
-        haal invoer op (voornaam, achternaam, email, telefoon) en maak schoon (trim)
-
-        Validatie
-        IF verplichte velden leeg zijn:
-            "Vul alle velden in"
-        IF email ongeldig is:
-            "Ongeldig emailadres"
-
-        Database Update
-        IF geen errors:
-            Probeer (Try):
-                maak SQL UPDATE query (prepared statement)
-                voer query uit met parameters
-                update de sessie-variabele (zodat naam wijzigt)
-                geef een succesmelding
-                refresh pagina na 1 seconde
-            vang (Catch) database fout:
-                IF email 'dubbele invoer' is -> Meld "Email bestaat al"
-                ELSE -> Log fout en meld "Algemene fout"
-
-    ------Stap 3: Gegevens ophalen (GET Situatie & Formulier vullen)
-    Dit gebeurt altijd, zodat het formulier gevuld is met de (nieuwe) data
-    maak SQL SELECT query (Haal klant op via ID)
-    voer query uit
-    sla resultaat op in variabele $user
-
-    -----Stap 4: weergeven
-    HTML weergeven:
-        IF er errors zijn -> toon error lijst
-        IF er succes is -> geef succesmelding
-        laat formulier zien:
-            - VUL velden met data uit $user (Sticky form)
-            - Actie = edit_profile.php (Postback)
-*/
 
 require_once 'includes/database.php';
 require_once 'includes/auth.php';
