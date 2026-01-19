@@ -32,13 +32,20 @@ $reservations = $t_res->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <title>Mijn Profiel - GRILLZ</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style> .text-gold { color: #D4AF37; } .bg-gold { background-color: #D4AF37; } </style>
+    <style> .text-gold {
+            color: #D4AF37;
+        }
+
+        .bg-gold {
+            background-color: #D4AF37;
+        } </style>
 </head>
 <body class="bg-gray-100 font-sans text-gray-800">
 
 <nav class="bg-gray-900 p-4 text-white shadow-md">
     <div class="container mx-auto flex justify-between items-center">
-        <div class="font-bold text-2xl text-gold tracking-wider"><a href="index.php">GRILLAZ<span class="text-white">.NL</span></a></div>
+        <div class="font-bold text-2xl text-gold tracking-wider"><a href="index.php">GRILLAZ<span
+                        class="text-white">.NL</span></a></div>
         <div>
             <a href="logout.php" class="text-gray-300 hover:text-white transition text-sm">Uitloggen</a>
         </div>
@@ -50,7 +57,8 @@ $reservations = $t_res->fetchAll(PDO::FETCH_ASSOC);
     <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden mb-10">
         <div class="bg-gray-800 p-4 flex justify-between items-center">
             <h2 class="text-xl text-gold font-bold">Mijn Gegevens</h2>
-            <a href="edit_profile.php" class="bg-gold text-gray-900 text-sm font-bold px-4 py-2 rounded hover:bg-yellow-500 transition">
+            <a href="edit_profile.php"
+               class="bg-gold text-gray-900 text-sm font-bold px-4 py-2 rounded hover:bg-yellow-500 transition">
                 Wijzig Gegevens
             </a>
         </div>
@@ -83,7 +91,8 @@ $reservations = $t_res->fetchAll(PDO::FETCH_ASSOC);
     <div class="max-w-4xl mx-auto">
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl font-bold text-gray-800">Mijn Afspraken</h2>
-            <a href="create_reservation.php" class="bg-gray-900 text-white font-bold px-4 py-2 rounded shadow hover:bg-gray-700 transition">
+            <a href="create_reservation.php"
+               class="bg-gray-900 text-white font-bold px-4 py-2 rounded shadow hover:bg-gray-700 transition">
                 + Nieuwe Afspraak
             </a>
         </div>
@@ -119,13 +128,14 @@ $reservations = $t_res->fetchAll(PDO::FETCH_ASSOC);
                                 €<?= htmlspecialchars($res['price'] ?? '0.00') ?>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <a href="edit_reservation.php?id=<?= $res['res_id'] ?>" class="text-blue-600 hover:text-blue-900 underline mr-3">
+                                <a href="edit_reservation.php?id=<?= $res['res_id'] ?>"
+                                   class="text-blue-600 hover:text-blue-900 underline mr-3">
                                     Wijzigen
                                 </a>
 
                                 <a href="delete_reservation.php?id=<?= $res['res_id'] ?>"
                                    class="text-red-600 hover:text-red-900 underline"
-                                   onclick="return confirm('Weet je zeker dat je deze afspraak wilt annuleren?');">
+                                   onclick="return confirm('Weet je zeker dat je deze afspraak wilt annuleren');">
                                     Annuleren
                                 </a>
                             </td>
