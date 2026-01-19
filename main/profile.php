@@ -135,7 +135,7 @@ $reservations = $t_res->fetchAll(PDO::FETCH_ASSOC);
 
                                 <a href="delete_reservation.php?id=<?= $res['res_id'] ?>"
                                    class="text-red-600 hover:text-red-900 underline"
-                                   onclick="return confirm('Weet je zeker dat je deze afspraak wilt annuleren');">
+                                   onclick="return confirm('Weet je zeker dat je deze afspraak wilt annuleren?');">
                                     Annuleren
                                 </a>
                             </td>
