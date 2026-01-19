@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = trim($_POST['phone']);
     $password = $_POST['password'];
 
-    echo('test,');
 
     if (empty($first_name) || empty($last_name) || empty($email) || empty($password)) {
         $errors[] = "Vul alle verplichte velden in.";
@@ -22,12 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($errors)) {
-        echo('error,');
+
 
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         try {
-            echo('testest,');
 
             $t = $conn->prepare("INSERT INTO customers (first_name, last_name, email, phone, password, user_type) VALUES (?, ?, ?, ?, ?, ?)");
 
