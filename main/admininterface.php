@@ -38,6 +38,20 @@ if (isset($_POST)) {
 // Execute query
 $result = mysqli_query($database, $query);
 ?>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
 // (in html) extract query result in table.
 <h1>header</h1>
 <p>webby wo wa be doh</p>
@@ -67,19 +81,19 @@ $result = mysqli_query($database, $query);
     <tbody>
         <?php  while ($user = mysqli_fetch_assoc($result)) {
             ?><tr>
-                <td><?=$user['user_id']?></td>
+                <td><?=htmlentities($user['user_id'])?></td>
             </tr>
             <tr>
-                <td><?=$user['first_name']?></td>
+                <td><?=htmlentities($user['first_name'])?></td>
             </tr>
             <tr>
-                <td><?=$user['last_name']?></td>
+                <td><?=htmlentities($user['last_name'])?></td>
             </tr>
             <tr>
-                <td><?=$user['email']?></td>
+                <td><?=htmlentities($user['email'])?></td>
             </tr>
             <tr>
-                <td><?=$user['phone']?></td>
+                <td><?=htmlentities($user['phone'])?></td>
             </tr>
             <tr>
                 <td><?switch ($user['user_type']) {
