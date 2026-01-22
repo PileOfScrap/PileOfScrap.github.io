@@ -58,7 +58,7 @@
      style="background-image: url('images/grills.png');">
     <div class="absolute inset-0 bg-black opacity-60"></div>
 
-    <div class="relative z-10 text-center text-white p-4">
+    <div class="relative z-9 text-center text-white p-4">
         <h1 class="text-5xl md:text-6xl font-bold mb-4">Shine Like a Star</h1>
         <p class="text-xl mb-8 text-gray-300">De beste custom-fitted grillz van Nederland. Goud, Zilver & VVS
             Diamanten.</p>
@@ -76,7 +76,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
         <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-            <img class="w-full h-64 object-cover" src="images/ChatGPT%20Image%2022%20jan%202026,%2014_35_01.png"
+            <img class="w-full h-64 object-cover" src="images/silver.png"
                  alt="Silver Grillz">
             <div class="p-6">
                 <h3 class="font-bold text-xl mb-2">Silver</h3>
@@ -91,7 +91,7 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-            <img class="w-full h-64 object-cover" src="images/ChatGPT%20Image%2022%20jan%202026,%2014_36_03.png"
+            <img class="w-full h-64 object-cover" src="images/gold.png"
                  alt="Gold Grillz">
             <div class="p-6">
                 <h3 class="font-bold text-xl mb-2">Classic Gold (18K)</h3>
@@ -106,7 +106,7 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition duration-300">
-            <img class="w-full h-64 object-cover" src="images/ChatGPT%20Image%2022%20jan%202026,%2014_37_40.png"
+            <img class="w-full h-64 object-cover" src="images/diamond.png"
                  alt="Diamond Grillz">
             <div class="p-6">
                 <h3 class="font-bold text-xl mb-2">VVS Diamond Set</h3>
