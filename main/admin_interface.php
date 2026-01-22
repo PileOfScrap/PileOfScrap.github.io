@@ -4,39 +4,43 @@ require_once 'includes/adminauth.php';
 require_once 'includes/database.php';
 
 // set query to select *
-$query = '
-SELECT 
-    user_id,
-    first_name,
-    last_name,
-    user_type,
-    email,
-    phone
-FROM customers';
-// dont select *, select all but password :facepalm:
+$sql = "
+    SELECT 
+        user_id,
+        first_name,
+        last_name,
+        user_type,
+        email,
+        phone
+    FROM customers
+";
+//...except for password
 
-// Check if post isset
-if (isset($_POST)) {
+$params = [];
+$conditions = [];
 
-    // if input isset
-    if (isset($_POST['input'])) {
-        // get input from POST
-        $input = $_POST['input'];
-        // append WHERE first_name = $input OR WHERE last_name = $input to query
-        $query .= ' WHERE first_name = $input OR WHERE last_name = $input';
-    }
-    // if ordertype isset
-    if (isset($_POST['ordertype'])) {
-        // get ordertype from POST
-        $order = $_POST['order'];
-        // append ORDER BY first_name or ORDER BY last_name depending on what is set
-        $query .= ' ORDER BY $order';
-        // ($order should be either first_name or last_name depending on what is selected)
-    }
+// Search filter
+if (!empty($_POST['input'])) {
+    $conditions[] = '(first_name LIKE :search OR last_name LIKE :search)';
+    $params[':search'] = '%' . $_POST['input'] . '%';
 }
 
+// Apply WHERE clause WHERE needed
+if (!empty($conditions)) {
+    $sql .= ' WHERE ' . implode(' AND ', $conditions);
+}
+
+// append sorting statement
+$allowedOrder = ['first_name', 'last_name'];
+if (!empty($_POST['order']) && in_array($_POST['order'], $allowedOrder, true)) {
+    $sql .= ' ORDER BY ' . $_POST['order'];
+}
+
+// Finalize query
 // Execute query
-$result = mysqli_query($database, $query);
+$stmt = $conn->prepare($sql);
+$stmt->execute($params);
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +86,7 @@ $result = mysqli_query($database, $query);
                             id="input"
                             value="<?= isset($input) ? htmlentities($input) : '' ?>"
                             class="w-full border rounded px-3 py-2 focus:outline-none focus:border-yellow-500"
-                            placeholder="Bijv. Jan"
+                            placeholder="Jan"
                     >
                 </div>
 
