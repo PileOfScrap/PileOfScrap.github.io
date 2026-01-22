@@ -6,7 +6,7 @@ require_once 'includes/database.php';
 // set query to select *
 $sql = "
     SELECT 
-        user_id,
+        id,
         first_name,
         last_name,
         user_type,
