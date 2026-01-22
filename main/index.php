@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRILLAZ - Custom Jewelry</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .text-gold { color: #D4AF37; }
-        .bg-gold { background-color: #D4AF37; }
-        .border-gold { border-color: #D4AF37; }
-        .hover-bg-gold:hover { background-color: #B5952F; }
-    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-dark': '#B5952F',
+                    }
+                }
+            }
+        }
+    </script>
+
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal flex flex-col min-h-screen">
 
