@@ -136,7 +136,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php while ($user = mysqli_fetch_assoc($result)): ?>
                     <tr class="hover:bg-gray-50">
                         <td class="px-4 py-3 text-sm text-gray-800">
-                            <?= htmlentities($user['user_id']) ?>
+                            <?= htmlentities($user['id']) ?>
                         </td>
                         <td class="px-4 py-3 text-sm text-gray-800">
                             <?= htmlentities($user['first_name']) ?>
@@ -161,7 +161,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </td>
                         <td class="px-4 py-3 text-sm">
                             <a
-                                    href="editotherprofile.php?id=<?= $user['user_id'] ?>"
+                                    href="editotherprofile.php?id=<?= $user['id'] ?>"
                                     class="text-yellow-600 font-semibold hover:underline"
                             >
                                 Bewerken
@@ -177,3 +177,4 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 </
+
