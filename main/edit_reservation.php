@@ -91,7 +91,13 @@ $all_products = $t_all->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <title>Wijzig Afspraak - GRILLZ</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style> .text-gold { color: #D4AF37; } .bg-gold { background-color: #D4AF37; } </style>
+    <style> .text-gold {
+            color: #D4AF37;
+        }
+
+        .bg-gold {
+            background-color: #D4AF37;
+        } </style>
 </head>
 <body class="bg-gray-100 font-sans py-8">
 
@@ -101,7 +107,9 @@ $all_products = $t_all->fetchAll(PDO::FETCH_ASSOC);
 
         <?php if (!empty($errors)): ?>
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-                <?php foreach($errors as $error) { echo "<p>⚠️ $error</p>"; } ?>
+                <?php foreach ($errors as $error) { ?>
+                    <p>⚠️<?= $error ?></p>
+                <?php } ?>
             </div>
         <?php endif; ?>
 
@@ -124,7 +132,7 @@ $all_products = $t_all->fetchAll(PDO::FETCH_ASSOC);
                 <div>
                     <label class="block text-gray-700 font-bold mb-2">Tijd</label>
                     <input type="time" name="time"
-                           value="<?= substr($reservation['time'], 0, 5)?>"
+                           value="<?= substr($reservation['time'], 0, 5) ?>"
                            class="w-full border rounded px-3 py-2 focus:outline-none focus:border-yellow-500" required>
                 </div>
             </div>
@@ -132,7 +140,7 @@ $all_products = $t_all->fetchAll(PDO::FETCH_ASSOC);
             <div class="mb-6">
                 <label class="block text-gray-700 font-bold mb-2">Behandeling(en) aanpassen</label>
                 <div class="bg-gray-50 p-4 rounded border h-48 overflow-y-scroll">
-                    <?php foreach($all_products as $prod): ?>
+                    <?php foreach ($all_products as $prod): ?>
                         <?php
                         $is_checked = in_array($prod['id'], $current_product_ids) ? 'checked' : '';
                         ?>
@@ -147,12 +155,14 @@ $all_products = $t_all->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="mb-6">
                 <label class="block text-gray-700 font-bold mb-2">Opmerkingen</label>
-                <textarea name="notes" rows="3" class="w-full border rounded px-3 py-2 focus:outline-none focus:border-yellow-500"><?= htmlspecialchars($reservation['notes']) ?></textarea>
+                <textarea name="notes" rows="3"
+                          class="w-full border rounded px-3 py-2 focus:outline-none focus:border-yellow-500"><?= htmlspecialchars($reservation['notes']) ?></textarea>
             </div>
 
             <div class="flex justify-between items-center">
                 <a href="profile.php" class="text-gray-500 hover:text-gray-800">Annuleren</a>
-                <button type="submit" class="bg-gray-900 text-gold font-bold py-3 px-6 rounded shadow hover:bg-gray-800 transition">
+                <button type="submit"
+                        class="bg-gray-900 text-gold font-bold py-3 px-6 rounded shadow hover:bg-gray-800 transition">
                     Wijzigingen Opslaan
                 </button>
             </div>
