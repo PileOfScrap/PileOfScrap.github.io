@@ -27,6 +27,10 @@ require_once 'includes/database.php';
                 <a href="#contact" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-gold mr-4 transition">
                     Contact
                 </a>
+                <a href="info.php"
+                   class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-gold mr-4 transition">
+                    Over ons
+                </a>
             </div>
             <div>
                 <a href="login.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-gold border-gold hover:border-transparent hover:text-gray-900 hover:bg-gold transition mt-4 lg:mt-0">
@@ -44,9 +48,6 @@ require_once 'includes/database.php';
 
         <!-- Tekst -->
         <div>
-      <span class="inline-block mb-4 text-sm font-semibold tracking-widest text-yellow-500 uppercase">
-        GRILLAZ.NL
-      </span>
 
             <h1 class="text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight mb-6">
                 Alles wat je moet weten<br>
@@ -64,7 +65,7 @@ require_once 'includes/database.php';
                         href="#veiligheid"
                         class="inline-block bg-yellow-500 text-white px-8 py-3 rounded-xl font-medium hover:bg-yellow-600 transition"
                 >
-                    Lees de richtlijnen
+                    Verzorging van je grillz
                 </a>
 
                 <a
@@ -75,16 +76,6 @@ require_once 'includes/database.php';
                 </a>
             </div>
         </div>
-
-        <!-- Afbeelding -->
-        <div class="relative">
-            <img
-                    src="https://via.placeholder.com/600x500"
-                    alt="Grillz"
-                    class="rounded-3xl shadow-xl w-full object-cover"
-            />
-        </div>
-
     </div>
 </section>
 
@@ -121,9 +112,9 @@ require_once 'includes/database.php';
         <!-- Afbeelding -->
         <div class="w-full">
             <img
-                    src="https://via.placeholder.com/600x400"
+                    src="images/baddie.jpg"
                     alt="Grillz"
-                    class="rounded-xl shadow-lg w-full object-cover"
+                    class="rounded-xl shadow-lg max-w-md mx-auto object-cover"
             />
         </div>
 
@@ -131,7 +122,7 @@ require_once 'includes/database.php';
 </section>
 
 <!-- Onze Materialen -->
-<section class="bg-gray-50 py-20">
+<section class="bg-gray-50 py-20" id="materialen">
     <div class="max-w-7xl mx-auto px-6">
 
         <h2 class="text-3xl font-semibold text-center text-gray-900 mb-14">
@@ -182,15 +173,15 @@ require_once 'includes/database.php';
         </div>
     </div>
 </section>
-<section class="max-w-7xl mx-auto px-6 py-20">
+<section class="max-w-7xl mx-auto px-6 py-20" id="veiligheid">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
         <!-- Afbeelding -->
         <div>
             <img
-                    src="https://via.placeholder.com/600x420"
+                    src="images/baddieaanhetwerk.jpg"
                     alt="Grillz"
-                    class="rounded-2xl shadow-lg w-full object-cover"
+                    class="rounded-xl shadow-lg max-w-md mx-auto object-cover"
             />
         </div>
 
@@ -275,48 +266,7 @@ require_once 'includes/database.php';
         Start Je Bestelling
     </button>
 </div>
-<div class="bg-white py-16 px-4 font-sans text-center">
-    <h2 class="text-[#0a1120] text-3xl md:text-4xl font-semibold mb-12">
-        Waarom GRILLAZ.NL?
-    </h2>
 
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <div class="flex flex-col items-center">
-            <div class="mb-4">
-                <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-            </div>
-            <h3 class="text-xl font-bold text-[#0a1120] mb-3">100% Custom Made</h3>
-            <p class="text-gray-600 max-w-xs">
-                Elk paar grillz wordt speciaal voor jou gemaakt op basis van een professionele afdruk
-            </p>
-        </div>
-
-        <div class="flex flex-col items-center">
-            <div class="mb-4">
-                <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-            </div>
-            <h3 class="text-xl font-bold text-[#0a1120] mb-3">Premium Kwaliteit</h3>
-            <p class="text-gray-600 max-w-xs">
-                Alleen de beste materialen: echt goud, sterling zilver en VVS diamanten
-            </p>
-        </div>
-
-        <div class="flex flex-col items-center">
-            <div class="mb-4">
-                <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-            </div>
-            <h3 class="text-xl font-bold text-[#0a1120] mb-3">Nederlands Vakmanschap</h3>
-            <p class="text-gray-600 max-w-xs">
-                Lokaal geproduceerd in Maassluis met persoonlijke service en aandacht
-            </p>
-        </div>
 
     </div>
 </div>
