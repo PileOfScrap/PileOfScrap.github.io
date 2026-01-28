@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $t = $conn->prepare("SELECT * FROM reservations WHERE id = ? AND customer_id = ?");
 $t->execute([$res_id, $user_id]);
-$reservation = $stmt->fetch(PDO::FETCH_ASSOC);
+$reservation = $t->fetch(PDO::FETCH_ASSOC);
 
 if (!$reservation) {
     die("Reservering niet gevonden of geen toegang.");

@@ -20,8 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['email'] = $user['email'];
             $_SESSION['first_name'] = $user['first_name'];
 
-            header("Location: profile.php");
+            if ($user['user_type'] == 2) {
+                header("Location: admin_interface.php");
+            } else {
+                header("Location: profile.php");
+            }
             exit;
+
 
         } else {
             $error = "E-mailadres of wachtwoord is onjuist.";

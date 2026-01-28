@@ -42,15 +42,7 @@ $reservations = $t_res->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body class="bg-gray-100 font-sans text-gray-800">
 
-<nav class="bg-gray-900 p-4 text-white shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-        <div class="font-bold text-2xl text-gold tracking-wider"><a href="index.php">GRILLAZ<span
-                        class="text-white">.NL</span></a></div>
-        <div>
-            <a href="logout.php" class="text-gray-300 hover:text-white transition text-sm">Uitloggen</a>
-        </div>
-    </div>
-</nav>
+<?php require_once 'includes/navigation.php';?>
 
 <div class="container mx-auto px-4 py-8">
 
@@ -152,6 +144,8 @@ $reservations = $t_res->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
 </div>
+
+<?php require_once 'includes/footer.php';?>
 
 </body>
 
