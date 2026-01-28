@@ -11,7 +11,7 @@
                    class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-gold mr-4 transition">
                     Producten
                 </a>
-                <a href="#contact"
+                <a href="contact.php"
                    class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-gold mr-4 transition">
                     Contact
                 </a>
