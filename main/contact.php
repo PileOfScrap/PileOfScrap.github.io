@@ -4,10 +4,15 @@ require_once "includes/database.php";
 
 if (isset( $_SESSION['user_id'])) {
     $userid = $_SESSION['user_id'];
-    $stmt = $conn->prepare("SELECT email FROM customers WHERE id = :id");
+    $stmt = $conn->prepare("SELECT email, first_name, last_name, phone FROM customers WHERE id = :id");
     $stmt->execute([':id' => $userid]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $email = $result['email'];
+    $name = $result['first_name'] . " " . $result['last_name'];
+    $phone = '';
+    if (isset($result['phone'])) {
+        $phone = $result['phone'];
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -19,6 +24,11 @@ if (isset( $_SESSION['user_id'])) {
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+        :root { --gold: #d2ad3c; --nav-bg: #0F172B; }
+        .dm-sans { font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+    </style>
 </head>
 
 <script>
@@ -44,13 +54,13 @@ if (isset( $_SESSION['user_id'])) {
 
         <form action="#" method="post" novalidate class="space-y-4">
             <label for="naam" class="sr-only">Naam</label>
-            <input id="naam" name="naam" type="text" placeholder="Voor- en Achternaam" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
+            <input value=<?php echo htmlentities($name)?>id="naam" name="naam" type="text" placeholder="Voor- en Achternaam" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
 
             <label for="email" class="sr-only">Email</label>
-            <input  value=<?php echo $email?> id="email" name="email" type="email" placeholder="Email" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
+            <input  value=<?php echo htmlentities($email)?> id="email" name="email" type="email" placeholder="Email" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
 
             <label for="telefoon" class="sr-only">Telefoon</label>
-            <input id="telefoon" name="telefoon" type="tel" placeholder="Telefoon" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
+            <input value=<?php echo htmlentities($phone)?> id="telefoon" name="telefoon" type="tel" placeholder="Telefoon" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
 
             <label for="onderwerp" class="sr-only">Onderwerp</label>
             <input id="onderwerp" name="onderwerp" type="text" placeholder="Onderwerp" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
