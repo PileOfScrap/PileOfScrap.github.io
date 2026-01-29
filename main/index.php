@@ -27,7 +27,8 @@ session_start();
 
 <?php require_once 'includes/navigation.php'; ?>
 
-<div class="relative h-screen flex items-center justify-center bg-cover bg-center"
+<div class="relative h-screen flex items-center justify-center
+            bg-contain md:bg-contain bg-center bg-no-repeat bg-black"
      style="background-image: url('images/grills.png');">
     <div class="absolute inset-0 bg-black opacity-60"></div>
 
