@@ -67,7 +67,7 @@ if (isset($_GET['id'])) {
     ");
     // execute query
     $stmt->execute([':id' => $_GET['id']]);
-    $user = $stmt->fetc h(PDO::FETCH_ASSOC);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
     // double check
     if (!$user) {
         header('Location: admin_interface.php');
