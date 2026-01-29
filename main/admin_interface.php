@@ -57,7 +57,9 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </style>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-sans pt-12">
+
+<?php require_once 'includes/navigation.php' ?>
 
 <div class="container mx-auto px-4 py-8 max-w-5xl">
     <div class="bg-white rounded-lg shadow-lg p-8">
