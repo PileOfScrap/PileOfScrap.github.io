@@ -1,5 +1,16 @@
 <?php
 session_start();
+require_once "includes/database.php";
+
+if (
+    isset( $_SESSION['user_id'])
+) {
+    $userid = $_SESSION['user_id'];
+    $conn->beginTransaction();
+    $t = $conn->prepare("SELECT email FROM customers WHERE id = ?");
+    $t->execute($userid);
+    $email = $conn->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +54,7 @@ session_start();
             <input id="naam" name="naam" type="text" placeholder="Voor- en Achternaam" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
 
             <label for="email" class="sr-only">Email</label>
-            <input id="email" name="email" type="email" placeholder="Email" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
+            <input  value=<?php echo $email?> id="email" name="email" type="email" placeholder="Email" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
 
             <label for="telefoon" class="sr-only">Telefoon</label>
             <input id="telefoon" name="telefoon" type="tel" placeholder="Telefoon" class="w-full px-4 py-3 rounded-md border border-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[color:var(--gold)]" />
