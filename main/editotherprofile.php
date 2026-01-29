@@ -2,7 +2,7 @@
 
 // get includes (adminauth and db)
 require_once 'includes/adminauth.php';
-require_once 'includes/database';
+require_once 'includes/database.php';
 
 // If isset post;
 if (isset($_POST)) {

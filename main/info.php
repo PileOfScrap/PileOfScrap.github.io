@@ -12,7 +12,6 @@ require_once 'includes/database.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infopage - GRILLZ</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style> .text-gold { color: #D4AF37; } .bg-gold { background-color: #D4AF37; } </style>
 </head>
 <body>
 
@@ -78,7 +77,7 @@ require_once 'includes/database.php';
             </p>
 
             <p class="leading-relaxed">
-                Met jarenlange ervaring en een scherp oog voor detail, leveren we
+                Met een scherp oog voor detail, leveren we
                 alleen de hoogste kwaliteit. Jouw tevredenheid en een perfecte
                 pasvorm staan bij ons centraal.
             </p>
@@ -87,7 +86,7 @@ require_once 'includes/database.php';
         <!-- Afbeelding -->
         <div class="w-full">
             <img
-                    src="images/baddie.jpg"
+                    src="images/boss-portrait.jpg"
                     alt="Grillz"
                     class="rounded-xl shadow-lg max-w-md mx-auto object-cover"
             />
@@ -154,7 +153,7 @@ require_once 'includes/database.php';
         <!-- Afbeelding -->
         <div>
             <img
-                    src="images/baddieaanhetwerk.jpg"
+                    src="images/boss.jpg"
                     alt="Grillz"
                     class="rounded-xl shadow-lg max-w-md mx-auto object-cover"
             />
@@ -221,7 +220,7 @@ require_once 'includes/database.php';
             </div>
             <h3 class="text-[#d4af37] text-xl font-bold mb-4 uppercase tracking-wide">Productie</h3>
             <p class="text-gray-300 leading-relaxed">
-                Onze vakmannen gaan aan de slag met je custom grillz. Dit proces duurt ongeveer 2-3 weken, afhankelijk van het ontwerp.
+                Wij gaan aan de slag met je custom grillz. Dit proces duurt ongeveer 2-3 weken, afhankelijk van het ontwerp.
             </p>
         </div>
 
@@ -237,45 +236,24 @@ require_once 'includes/database.php';
 
     </div>
 
-    <button class="bg-[#d4af37] hover:bg-[#b8962e] text-[#0a1120] font-bold py-4 px-10 rounded-full transition duration-300 text-lg">
-        Start Je Bestelling
-    </button>
 </div>
 
 
     </div>
 </div>
-<footer id="contact" class="bg-gray-900 text-white mt-auto">
-    <div class="container mx-auto px-4 py-8">
-        <div class="flex flex-wrap justify-between">
-            <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                <h3 class="font-bold text-xl text-gold mb-2">GRILLAZ.NL</h3>
-                <p class="text-gray-400 text-sm">Jouw lach, onze passie. <br>Custom made in Maassluis.</p>
-            </div>
-
-            <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                <h4 class="font-bold mb-2">Contact</h4>
-                <p class="text-gray-400 text-sm">
-                    Hoofdstraat 123<br>
-                    1234 AB Plaats<br>
-                    info@grillaz.nl<br>
-                    06 - 123 45 678
-                </p>
-            </div>
-
-            <div class="w-full md:w-1/3">
-                <h4 class="font-bold mb-2">Volg ons</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-gold transition">Instagram</a>
-                    <a href="#" class="text-gray-400 hover:text-gold transition">TikTok</a>
-                    <a href="#" class="text-gray-400 hover:text-gold transition">Facebook</a>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-gray-800 mt-8 pt-4 text-center text-gray-500 text-sm">
-            &copy; 2025 Grillaz.nl - Alle rechten voorbehouden.
-        </div>
-    </div>
-</footer>
+<?php require_once 'includes/footer.php'; ?>
 </body>
 </html>
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    gold: '#D4AF37',
+                    'gold-dark': '#B5952F',
+                }
+            }
+        }
+    }
+</script>
