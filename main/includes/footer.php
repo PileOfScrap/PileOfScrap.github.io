@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="border-t border-gray-800 mt-8 pt-4 text-center text-gray-500 text-sm">
-            &copy; 2025 Grillaz.nl - Alle rechten voorbehouden.
+            &copy; 2026 Grillaz.nl - Alle rechten voorbehouden.
         </div>
     </div>
 </footer>

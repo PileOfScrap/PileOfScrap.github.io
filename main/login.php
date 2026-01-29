@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
     <p class="text-center text-gray-500 text-xs mt-6">
-        Nog geen account? <a href="registratie.php" class="text-yellow-600 hover:underline">Registreer hier</a>.
+        Nog geen account? <a href="registration.php" class="text-yellow-600 hover:underline">Registreer hier</a>.
     </p>
 </div>
 

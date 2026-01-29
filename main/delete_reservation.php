@@ -18,14 +18,17 @@ if (!isset($_GET['id']) || $_GET['id'] == '') {
 
 $id = mysqli_escape_string($db, $_GET['id']);
 
+$queryProducts = "DELETE FROM reservation_products WHERE reservation_id = '$id'";
+mysqli_query($db, $queryProducts);
+
 $query = "DELETE FROM reservations WHERE id = '$id'";
 $result = mysqli_query($db, $query);
 
 if ($result) {
-    header('Location: index.php');
+    header('Location: profile.php');
     exit;
 } else {
-    $errorMessage = 'Er ging iets mis bij het verwijderen';
+    $errorMessage = 'Er ging iets mis bij het verwijderen: ' . mysqli_error($db);
 }
 
 mysqli_close($db);
@@ -34,14 +37,9 @@ mysqli_close($db);
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Delete</title>
 </head>
 <body>
-
 <p> <?= htmlentities($errorMessage) ?> </p>
-
-</body
+</body>
 </html>

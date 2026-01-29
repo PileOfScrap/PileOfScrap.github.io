@@ -27,7 +27,7 @@
         <div id="nav-content" class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden pt-6 lg:pt-0 transition-all duration-300 ease-in-out">
 
             <div class="text-sm lg:flex-grow">
-                <a href="index.php#products" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-gold mr-4 transition border-b border-gray-800 lg:border-none pb-2 lg:pb-0">
+                <a href="products.php" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-gold mr-4 transition border-b border-gray-800 lg:border-none pb-2 lg:pb-0">
                     Producten
                 </a>
                 <a href="info.php" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-gold mr-4 transition border-b border-gray-800 lg:border-none pb-2 lg:pb-0">
