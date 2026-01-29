@@ -2,14 +2,12 @@
 session_start();
 require_once "includes/database.php";
 
-if (
-    isset( $_SESSION['user_id'])
-) {
+if (isset( $_SESSION['user_id'])) {
     $userid = $_SESSION['user_id'];
-    $conn->beginTransaction();
-    $t = $conn->prepare("SELECT email FROM customers WHERE id = ?");
-    $t->execute($userid);
-    $email = $conn->fetchAll(PDO::FETCH_ASSOC);
+    $stmt = $conn->prepare("SELECT email FROM customers WHERE id = :id");
+    $stmt->execute([':id' => $userid]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $email = $result['email'];
 }
 ?>
 <!DOCTYPE html>
@@ -21,11 +19,6 @@ if (
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-
-        :root { --gold: #d2ad3c; --nav-bg: #0F172B; }
-        .dm-sans { font-family: 'DM Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
-    </style>
 </head>
 
 <script>
