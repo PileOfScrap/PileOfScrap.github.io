@@ -261,13 +261,19 @@ $all_products = $conn->query("SELECT * FROM products")->fetchAll(PDO::FETCH_ASSO
                             };
                             ?>
                             <span class="px-2 py-1 rounded text-xs font-bold <?= $badgeClass ?>"><?= $typeName ?></span>
-                        </td>
                         <td class="px-4 py-3 text-sm flex gap-3">
                             <button onclick="openPlanModal(<?= $user['id'] ?>, '<?= htmlentities($user['first_name'].' '.$user['last_name']) ?>')"
                                     class="text-blue-600 font-bold hover:text-blue-800 hover:underline flex items-center">
                                 <span class="text-lg mr-1">+</span> Inplannen
                             </button>
+
                             <a href="editotherprofile.php?id=<?= $user['id'] ?>" class="text-gray-500 font-semibold hover:text-gold hover:underline mt-1">Bewerken</a>
+
+                            <a href="delete_other_profile.php?id=<?= $user['id'] ?>"
+                               class="text-red-500 font-semibold hover:text-red-700 hover:underline mt-1"
+                               onclick="return confirm('Weet je zeker dat je deze gebruiker wilt verwijderen?');">
+                                Verwijderen
+                            </a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
